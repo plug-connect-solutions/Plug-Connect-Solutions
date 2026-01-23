@@ -13,7 +13,7 @@ export const Consultation: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    const scriptUrl = "https://script.google.com/macros/s/AKfycbz08VtruTokSsGpAMMP7Sd_2PZCaPl7Lk1bIxCZUazaXfD8dmJJZKZQFfr2u80K68_c/exec";
+    const scriptUrl = const scriptUrl = process.env.GOOGLE_SCRIPT_URL;
     const formData = new FormData(e.currentTarget);
 
     try {
