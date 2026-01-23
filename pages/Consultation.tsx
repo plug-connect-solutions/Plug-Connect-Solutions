@@ -13,7 +13,7 @@ export const Consultation: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    const scriptUrl = const scriptUrl = process.env.GOOGLE_SCRIPT_URL;
+    const scriptUrl = process.env.GOOGLE_SCRIPT_URL;
     const formData = new FormData(e.currentTarget);
 
     try {
