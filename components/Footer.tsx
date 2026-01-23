@@ -130,7 +130,7 @@ export const Footer: React.FC = () => {
         </div>
 
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-widest text-gray-500">
-          <p>&copy; {new Date().getFullYear()} Plug Connect Solutions. Reg No: 2024/025213/07</p>
+          <p>&copy; {new Date().getFullYear()} Plug Connect Solutions.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
