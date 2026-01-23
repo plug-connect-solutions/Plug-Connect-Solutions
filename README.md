@@ -69,8 +69,7 @@ VITE_CONTACT_FORM_URL=your_google_script_url_here
 
 ## 📄 License
 
-Copyright © 2024 Plug Connect Solutions. All rights reserved.
-Reg No: 2024/025213/07
+Copyright © 2026 Plug Connect Solutions. All rights reserved.
 
 ---
 *Built with ❤️ in South Africa by Plug Connect Solutions.*
