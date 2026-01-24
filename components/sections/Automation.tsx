@@ -33,7 +33,7 @@ export const Automation: React.FC = () => {
             <div className="space-y-4 mb-8">
               <div className="flex items-center gap-4 p-4 bg-white/5 rounded-xl border border-white/10 backdrop-blur-sm">
                 <div className="h-2 w-2 rounded-full bg-green-500 shadow-[0_0_10px_#22c55e]"></div>
-                <span className="font-mono text-sm">New Order &rarr Send Invoice &rarr Notify You on WhatsApp</span>
+                <span className="font-mono text-sm">New Order &rarr; Send Invoice &rarr; Notify You on WhatsApp</span>
               </div>
             </div>
             <Link to="/consultation">
