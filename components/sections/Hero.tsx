@@ -9,6 +9,12 @@ const trustedCompanies = [
 ];
 
 export const Hero: React.FC = () => {
+  const scrollToServices = () => {
+    const element = document.getElementById('services');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
     <section className="relative w-full pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-white">
       {/* Abstract Background Element */}
@@ -61,11 +67,9 @@ export const Hero: React.FC = () => {
                   Get Started <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
               </Link>
-              <a href="#services">
-                  <Button size="lg" variant="outline" className="w-full sm:w-auto rounded-full bg-white hover:text-accent border-gray-200">
+                <Button onClick={scrollToServices} size="lg" variant="outline" className="w-full sm:w-auto rounded-full bg-white hover:text-accent border-gray-200">
                   View Our Services
-                  </Button>
-              </a>
+                </Button>
             </motion.div>
 
             {/* Trust Signals */}
