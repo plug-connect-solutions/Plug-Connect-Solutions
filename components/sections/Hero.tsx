@@ -61,11 +61,11 @@ export const Hero: React.FC = () => {
                   Get Started <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
               </Link>
-              <Link to="/services">
+              <a href="#services">
                   <Button size="lg" variant="outline" className="w-full sm:w-auto rounded-full bg-white hover:text-accent border-gray-200">
                   View Our Services
                   </Button>
-              </Link>
+              </a>
             </motion.div>
 
             {/* Trust Signals */}
