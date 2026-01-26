@@ -58,10 +58,11 @@ export const FAQ: React.FC = () => {
                   <Plus className="text-gray-400 flex-shrink-0" size={20} />
                 )}
               </button>
+
               
               <div 
                 className={`px-6 overflow-hidden transition-all duration-300 ease-in-out ${
-                  openIndex === index ? 'max-h-48 pb-6 opacity-100' : 'max-h-0 opacity-0'
+                  openIndex === index ? 'max-h-96 pb-6 opacity-100' : 'max-h-0 opacity-0'
                 }`}
               >
                 <p className="text-gray-600 leading-relaxed">
