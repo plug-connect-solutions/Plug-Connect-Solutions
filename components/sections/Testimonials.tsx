@@ -3,9 +3,6 @@ import { Card, CardContent } from '../ui/Card';
 import { ChevronLeft, ChevronRight, Quote, Star } from 'lucide-react';
 import { Testimonial } from '../../types';
 
-import mtrImg from '../../images/testimonials/mtrvision30_logo.jpg';
-import obbyImg from '../../images/testimonials/Obby.jpg';
-
 const testimonials: Testimonial[] = [
   {
     id: 1,
@@ -13,7 +10,7 @@ const testimonials: Testimonial[] = [
     author: "Tshepo Sekhoahla",
     role: "Owner",
     company: "MTR VISION 30",
-    image: mtrImg,
+    image: "/images/testimonials/mtrvision30_logo.jpg"
   },
   {
     id: 2,
@@ -21,7 +18,7 @@ const testimonials: Testimonial[] = [
     author: "Obakeng Kobuane",
     role: "Owner",
     company: "Obby's PC Solutions",
-    image: obbyImg,
+    image: "/images/testimonials/Obby.jpg"
   },
 ];
 
