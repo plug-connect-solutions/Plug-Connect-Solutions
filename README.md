@@ -5,7 +5,7 @@ A modern, high-performance web application for **Plug Connect Solutions**, a dig
 ![Project Preview](https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1200)
 
 ## 🌐 Live Website
-[Visit Plug Connect Solutions](https://plugconnect.co.za/)
+[Visit Plug Connect Solutions](https://plugconnectsolutions.co.za/)
 
 ## ✨ Key Features
 
