@@ -55,12 +55,6 @@ git clone https://github.com/your-username/plug-connect-solutions.git
 cd plug-connect-solutions
 ```
 
-### 3. Environment Configuration
-To keep your API endpoints secure, do not hardcode the Google Apps Script URL. Create a `.env` file in the root:
-```env
-VITE_CONTACT_FORM_URL=your_google_script_url_here
-```
-
 ## 🔒 Security & Privacy
 
 - **API Keys**: This project uses environment variables for sensitive endpoints.
