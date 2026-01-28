@@ -3,6 +3,9 @@ import { Card, CardContent } from '../ui/Card';
 import { ChevronLeft, ChevronRight, Quote, Star } from 'lucide-react';
 import { Testimonial } from '../../types';
 
+import mtrImg from '../../images/testimonials/mtrvision30_logo.jpg';
+import obbyImg from '../../images/testimonials/Obby.jpg';
+
 const testimonials: Testimonial[] = [
   {
     id: 1,
@@ -10,7 +13,7 @@ const testimonials: Testimonial[] = [
     author: "Tshepo Sekhoahla",
     role: "Owner",
     company: "MTR VISION 30",
-    image: "https://scontent-jnb2-1.xx.fbcdn.net/v/t39.30808-6/617870449_862834963205516_7281797345763936963_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=fFDFagD1JxoQ7kNvwH7oV8R&_nc_oc=Adm1I5CbntQ_EmvglrAjgYbkrZmj2nyeHToCPSGmW7dBy8ObBUEwL4CYnKkBMORie2o&_nc_zt=23&_nc_ht=scontent-jnb2-1.xx&_nc_gid=0oSlFvrLUUzQdcBcfn8FMA&oh=00_AfoAMHhVDbsMwZaS1MKnEc87Jv4l9T1Mf_pBAUcuP6kpPg&oe=697901D4",
+    image: mtrImg,
   },
   {
     id: 2,
@@ -18,7 +21,7 @@ const testimonials: Testimonial[] = [
     author: "Obakeng Kobuane",
     role: "Owner",
     company: "Obby's PC Solutions",
-    image: "https://scontent-jnb2-1.xx.fbcdn.net/v/t39.30808-6/480555918_1142464504215129_3924523770384393238_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeGGDB9sgXyXn7Ze2Afgr_C-1RJQ_i45axHVElD-LjlrEScrPvQThH85QC9moSFQbBRJgU1TnWs1IBWUC3fKJwS6&_nc_ohc=oPzVLnbrkX4Q7kNvwHjJFcJ&_nc_oc=AdktvBYH-IWJTKpuXqdvBW9Qre9jfqbSe5LsVOqzAPBrXgb41_UnacU_RstnNmZ-Oo8&_nc_zt=23&_nc_ht=scontent-jnb2-1.xx&_nc_gid=Kkv-4ccfFtCou_U_kkezAA&oh=00_Afo-6ZH7qeZLIf67TXVPja02E8kTY-mEUvX_6vAzouB3RQ&oe=69793DFF"
+    image: obbyImg,
   },
 ];
 
