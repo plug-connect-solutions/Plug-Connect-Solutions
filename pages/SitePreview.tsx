@@ -355,9 +355,9 @@ export const SitePreview: React.FC = () => {
             heroImg="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1400&auto=format&fit=crop"
             products={[
               { name: "Pro Gaming Mouse", price: 1250, img: "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?q=80&w=600&auto=format&fit=crop" },
-              { name: "Mechanical Keys", price: 2400, img: "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?q=80&w=600&auto=format&fit=crop" },
-              { name: "ANC Headset", price: 1800, img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=600&auto=format&fit=crop" },
-              { name: "4K Desktop Hub", price: 4900, img: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?q=80&w=600&auto=format&fit=crop" }
+              { name: "Wireless Keyboard", price: 2400, img: "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?q=80&w=600&auto=format&fit=crop" },
+              { name: "Apple AirPods Max", price: 12500, img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=600&auto=format&fit=crop" },
+              { name: "Apple iMac All-in-One Desktop Computer", price: 42900, img: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?q=80&w=600&auto=format&fit=crop" }
             ]}
           />;
         default: return (
