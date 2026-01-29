@@ -9,7 +9,7 @@ const portfolioItems = [
   {
     client: "MTR VISION 30",
     platform: "Full Suite Social Management",
-    image: "https://scontent-jnb2-1.xx.fbcdn.net/v/t39.30808-6/617870449_862834963205516_7281797345763936963_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=fFDFagD1JxoQ7kNvwH7oV8R&_nc_oc=Adm1I5CbntQ_EmvglrAjgYbkrZmj2nyeHToCPSGmW7dBy8ObBUEwL4CYnKkBMORie2o&_nc_zt=23&_nc_ht=scontent-jnb2-1.xx&_nc_gid=0oSlFvrLUUzQdcBcfn8FMA&oh=00_AfoAMHhVDbsMwZaS1MKnEc87Jv4l9T1Mf_pBAUcuP6kpPg&oe=697901D4",
+    image: "/images/testimonials/mtrvision30_logo.jpg",
     results: "Significant increase in property inquiries and tenant placement."
   },
   {
