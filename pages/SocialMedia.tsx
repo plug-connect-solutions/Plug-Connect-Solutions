@@ -15,8 +15,8 @@ const portfolioItems = [
   {
     client: "The Growing Mind",
     platform: "Content & Community Management",
-    image: "https://scontent-jnb2-1.xx.fbcdn.net/v/t39.30808-6/369517908_3584832978441929_2017806542128831035_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=o1C7asYClYsQ7kNvwEia5Kh&_nc_oc=AdkeIZAba-_E1Qfl_AaZEaGK4aNbUglI7NBNreOx87r3pXWX5LZ4fJ8nLbIEBPfQxtI&_nc_zt=23&_nc_ht=scontent-jnb2-1.xx&_nc_gid=6p249-8PS7-0mVpSPm8Slw&oh=00_AfqtXH0oTqg6nXMocLVFdTYImJ_vfSm7o9K1Fj-2bzdYNw&oe=69791760",
-    results: "3x follower growth and improved digital engagement within 6 months."
+    image: "thegrowingmindlogo.jpg",
+    results: "Increased in follower growth and improved digital engagement within 6 months."
   },
 ];
 
