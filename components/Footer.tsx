@@ -32,6 +32,20 @@ const TikTokIcon: React.FC<{ size?: number; className?: string }> = ({ size = 20
   </svg>
 );
 
+// Custom SVG for LinkedIn - Highly accurate official simplified path
+const LinkedInIcon: React.FC<{ size?: number; className?: string }> = ({ size = 20, className = "" }) => (
+  <svg 
+    width={size} 
+    height={size} 
+    viewBox="0 0 24 24" 
+    fill="currentColor" 
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+  >
+    <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.932zm-1.292 19.494h2.039L6.486 3.24H4.298l13.311 17.407z" />
+  </svg>
+);
+
 export const Footer: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -83,6 +97,11 @@ export const Footer: React.FC = () => {
                 className="bg-white/5 p-2.5 rounded-lg text-white hover:bg-black hover:text-[#00f2ea] transition-all flex items-center justify-center group/icon" 
                 title="TikTok" aria-label="Visit our TikTok">
                 <TikTokIcon size={20} className="fill-current" />
+              </a>
+              <a href="https://www.linkedin.com/company/plug-connect-solutions/" target="_blank" rel="noopener noreferrer" 
+                className="bg-white/5 p-2.5 rounded-lg text-white hover:text-white hover:bg-[#1877F2] transition-all flex items-center justify-center" 
+                title="LinkedIn" aria-label="Visit our LinkedIn">
+                <LinkedInIcon size={20} className="fill-current" />
               </a>
             </div>
           </div>
