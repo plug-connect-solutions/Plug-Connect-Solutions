@@ -1,16 +1,14 @@
-
 import React from 'react';
 import { Facebook, Instagram, Mail, Phone, MapPin } from 'lucide-react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Logo } from './ui/Logo';
 
-// Custom SVG for X (formerly Twitter) - Official Path
-const XIcon: React.FC<{ size?: number; className?: string }> = ({ size = 20, className = "" }) => (
-  <svg 
-    width={size} 
-    height={size} 
-    viewBox="0 0 24 24" 
-    fill="currentColor" 
+const XIcon: React.FC<{ size?: number; className?: string }> = ({ size = 18, className = "" }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
     xmlns="http://www.w3.org/2000/svg"
     className={className}
   >
@@ -18,13 +16,12 @@ const XIcon: React.FC<{ size?: number; className?: string }> = ({ size = 20, cla
   </svg>
 );
 
-// Custom SVG for TikTok - Highly accurate official simplified path
-const TikTokIcon: React.FC<{ size?: number; className?: string }> = ({ size = 20, className = "" }) => (
-  <svg 
-    width={size} 
-    height={size} 
-    viewBox="0 0 24 24" 
-    fill="currentColor" 
+const TikTokIcon: React.FC<{ size?: number; className?: string }> = ({ size = 18, className = "" }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
     xmlns="http://www.w3.org/2000/svg"
     className={className}
   >
@@ -32,17 +29,16 @@ const TikTokIcon: React.FC<{ size?: number; className?: string }> = ({ size = 20
   </svg>
 );
 
-// Custom SVG for LinkedIn - Highly accurate official simplified path
-const LinkedInIcon: React.FC<{ size?: number; className?: string }> = ({ size = 20, className = "" }) => (
-  <svg 
-    width={size} 
-    height={size} 
-    viewBox="0 0 24 24" 
-    fill="currentColor" 
+const LinkedInIcon: React.FC<{ size?: number; className?: string }> = ({ size = 18, className = "" }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
     xmlns="http://www.w3.org/2000/svg"
     className={className}
   >
-    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
   </svg>
 );
 
@@ -62,98 +58,171 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-primary text-gray-300 pt-16 pb-8">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          
-          {/* Brand */}
-          <div className="space-y-6">
-            <Link to="/" className="flex items-center space-x-3 text-white group" aria-label="Plug Connect Solutions Home">
-              <div className="shrink-0">
-                 <Logo size={42} />
-              </div>
-              <span className="font-bold text-xl tracking-tight leading-tight">Plug Connect <br className="sm:hidden" /> Solutions</span>
-            </Link>
-            <p className="text-sm leading-relaxed text-gray-400">
-              Helping South African SMEs dominate the digital space. Affordable web design, registration, and automation.
-            </p>
-            <div className="flex space-x-4 pt-2">
-              <a href="https://www.facebook.com/profile.php?id=61584670473805" target="_blank" rel="noopener noreferrer" 
-                className="bg-white/5 p-2.5 rounded-lg text-white hover:text-white hover:bg-[#1877F2] transition-all flex items-center justify-center" 
-                title="Facebook" aria-label="Visit our Facebook">
-                <Facebook size={20} />
-              </a>
-              <a href="https://x.com/plugconnectsols" target="_blank" rel="noopener noreferrer" 
-                className="bg-white/5 p-2.5 rounded-lg text-white hover:bg-black hover:text-white transition-all flex items-center justify-center group/icon" 
-                title="X (Twitter)" aria-label="Visit our X (Twitter)">
-                <XIcon size={20} className="fill-current" />
-              </a>
-              <a href="https://www.instagram.com/plugconnectsols" target="_blank" rel="noopener noreferrer" 
-                className="bg-white/5 p-2.5 rounded-lg text-white hover:text-white hover:bg-gradient-to-tr hover:from-[#f9ce34] hover:via-[#ee2a7b] hover:to-[#6228d7] transition-all flex items-center justify-center" 
-                title="Instagram" aria-label="Visit our Instagram">
-                <Instagram size={20} />
-              </a>
-              <a href="https://vm.tiktok.com/ZSHwx4Bc7DWnr-HFBha/" target="_blank" rel="noopener noreferrer" 
-                className="bg-white/5 p-2.5 rounded-lg text-white hover:bg-black hover:text-[#00f2ea] transition-all flex items-center justify-center group/icon" 
-                title="TikTok" aria-label="Visit our TikTok">
-                <TikTokIcon size={20} className="fill-current" />
-              </a>
-              <a href="https://www.linkedin.com/company/plug-connect-solutions/" target="_blank" rel="noopener noreferrer" 
-                className="bg-white/5 p-2.5 rounded-lg text-white hover:text-white hover:bg-[#1877F2] transition-all flex items-center justify-center" 
-                title="LinkedIn" aria-label="Visit our LinkedIn">
-                <LinkedInIcon size={20} className="fill-current" />
-              </a>
-            </div>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-white font-semibold mb-6 uppercase tracking-wider text-xs font-heading">Company</h4>
-            <ul className="space-y-3 text-sm">
-              <li><button onClick={() => handleScrollTo('about')} className="hover:text-accent transition-colors">About Our Agency</button></li>
-              <li><Link to="/pricing" className="hover:text-accent transition-colors">Pricing & Packages</Link></li>
-              <li><button onClick={() => handleScrollTo('testimonials')} className="hover:text-accent transition-colors">Customer Success</button></li>
-              <li><Link to="/consultation" className="hover:text-accent transition-colors">Book Consultation</Link></li>
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h4 className="text-white font-semibold mb-6 uppercase tracking-wider text-xs font-heading">Services</h4>
-            <ul className="space-y-3 text-sm">
-              <li><Link to="/web-design" className="hover:text-accent transition-colors">Website Design</Link></li>
-              <li><Link to="/social-media" className="hover:text-accent transition-colors">Social Media Marketing</Link></li>
-              <li><Link to="/business-registration" className="hover:text-accent transition-colors">Company Registration</Link></li>
-              <li><button onClick={() => handleScrollTo('automation')} className="hover:text-accent transition-colors">Workflow Automation</button></li>
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h4 className="text-white font-semibold mb-6 uppercase tracking-wider text-xs font-heading">Contact Info</h4>
-            <ul className="space-y-4 text-sm">
-              <li className="flex items-start space-x-3">
-                <MapPin size={18} className="text-accent mt-0.5 shrink-0" />
-                <span className="text-gray-400">Operating Nationwide (SA)</span>
-              </li>
-              <li className="flex items-center space-x-3">
-                <Phone size={18} className="text-accent shrink-0" />
-                <span className="text-gray-400">076 375 0213</span>
-              </li>
-              <li className="flex items-center space-x-3">
-                <Mail size={18} className="text-accent shrink-0" />
-                <a href="mailto:plugconnectsolutions@proton.me" className="text-gray-400 hover:text-accent transition-colors">Email Our Team</a>
-              </li>
-            </ul>
+    <footer className="bg-surface-container pt-14 pb-8 lg:pt-16 lg:pb-8 px-6 lg:px-16 border-t border-border-muted text-on-surface">
+      <div className="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        {/* Brand */}
+        <div className="col-span-1">
+          <Link to="/" className="flex items-center gap-3.5 mb-6 group" aria-label="Plug Connect Solutions Home">
+            <Logo size={38} />
+            <span className="font-heading text-2xl font-semibold tracking-tight text-primary">Plug Connect</span>
+          </Link>
+          <p className="text-on-surface-variant text-sm leading-relaxed mb-6">
+            Helping South African SMEs dominate the digital space. Affordable web design, registration, and automation.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <a
+              href="https://www.facebook.com/profile.php?id=61584670473805"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 bg-surface border border-border-muted rounded-full flex items-center justify-center text-on-surface-variant hover:bg-accent hover:text-white hover:border-accent transition-all"
+              title="Facebook"
+              aria-label="Visit our Facebook"
+            >
+              <Facebook size={18} />
+            </a>
+            <a
+              href="https://x.com/plugconnectsols"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 bg-surface border border-border-muted rounded-full flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-white hover:border-primary transition-all"
+              title="X (Twitter)"
+              aria-label="Visit our X (Twitter)"
+            >
+              <XIcon size={16} />
+            </a>
+            <a
+              href="https://www.instagram.com/plugconnectsols"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 bg-surface border border-border-muted rounded-full flex items-center justify-center text-on-surface-variant hover:bg-accent hover:text-white hover:border-accent transition-all"
+              title="Instagram"
+              aria-label="Visit our Instagram"
+            >
+              <Instagram size={18} />
+            </a>
+            <a
+              href="https://vm.tiktok.com/ZSHwx4Bc7DWnr-HFBha/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 bg-surface border border-border-muted rounded-full flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-white hover:border-primary transition-all"
+              title="TikTok"
+              aria-label="Visit our TikTok"
+            >
+              <TikTokIcon size={16} />
+            </a>
+            <a
+              href="https://www.linkedin.com/company/plug-connect-solutions/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 bg-surface border border-border-muted rounded-full flex items-center justify-center text-on-surface-variant hover:bg-accent hover:text-white hover:border-accent transition-all"
+              title="LinkedIn"
+              aria-label="Visit our LinkedIn"
+            >
+              <LinkedInIcon size={16} />
+            </a>
           </div>
         </div>
 
-        <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-widest text-gray-500">
-          <p>&copy; {new Date().getFullYear()} Plug Connect Solutions.</p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
-          </div>
+        {/* Company */}
+        <div>
+          <h5 className="text-xs font-semibold uppercase tracking-[0.1em] text-primary mb-6">Company</h5>
+          <ul className="space-y-4 text-sm text-on-surface-variant">
+            <li>
+              <button onClick={() => handleScrollTo('about')} className="hover:text-accent transition-colors text-left">
+                About Our Agency
+              </button>
+            </li>
+            <li>
+              <Link to="/pricing" className="hover:text-accent transition-colors">
+                Pricing &amp; Packages
+              </Link>
+            </li>
+            <li>
+              <button onClick={() => handleScrollTo('testimonials')} className="hover:text-accent transition-colors text-left">
+                Customer Success
+              </button>
+            </li>
+            <li>
+              <Link to="/consultation" className="hover:text-accent transition-colors">
+                Book Consultation
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Services */}
+        <div>
+          <h5 className="text-xs font-semibold uppercase tracking-[0.1em] text-primary mb-6">Services</h5>
+          <ul className="space-y-4 text-sm text-on-surface-variant">
+            <li>
+              <Link to="/solutions" className="hover:text-accent transition-colors">
+                All Solutions
+              </Link>
+            </li>
+            <li>
+              <Link to="/web-design" className="hover:text-accent transition-colors">
+                Website Design
+              </Link>
+            </li>
+            <li>
+              <Link to="/social-media" className="hover:text-accent transition-colors">
+                Social Media Marketing
+              </Link>
+            </li>
+            <li>
+              <Link to="/business-registration" className="hover:text-accent transition-colors">
+                Company Registration
+              </Link>
+            </li>
+            <li>
+              <button onClick={() => handleScrollTo('automation')} className="hover:text-accent transition-colors text-left">
+                Workflow Automation
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        {/* Contact Info */}
+        <div>
+          <h5 className="text-xs font-semibold uppercase tracking-[0.1em] text-primary mb-6">Contact Info</h5>
+          <ul className="space-y-4 text-sm text-on-surface-variant">
+            <li className="flex items-start gap-3">
+              <MapPin size={18} className="text-accent shrink-0 mt-0.5" />
+              <span>Operating Nationwide (SA)</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <Phone size={18} className="text-accent shrink-0 mt-0.5" />
+              <a href="tel:0763750213" className="hover:text-accent transition-colors tabular-nums">
+                076 375 0213
+              </a>
+            </li>
+            <li className="flex items-start gap-3">
+              <Mail size={18} className="text-accent shrink-0 mt-0.5" />
+              <a href="mailto:plugconnectsolutions@proton.me" className="hover:text-accent transition-colors">
+                Email Our Team
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="max-w-[1280px] mx-auto mt-10 pt-6 border-t border-border-muted flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-on-surface-variant">
+        <p>&copy; {new Date().getFullYear()} Plug Connect Solutions. All rights reserved.</p>
+        <div className="flex gap-6">
+          <Link to="/privacy" className="hover:text-primary transition-colors">
+            Privacy Policy
+          </Link>
+          <Link to="/terms" className="hover:text-primary transition-colors">
+            Terms of Service
+          </Link>
+          <a
+            href="https://www.linkedin.com/company/plug-connect-solutions/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-primary transition-colors"
+          >
+            LinkedIn
+          </a>
         </div>
       </div>
     </footer>

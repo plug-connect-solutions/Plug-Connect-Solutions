@@ -12,6 +12,7 @@ import { WebDesign } from './pages/WebDesign';
 import { SocialMedia } from './pages/SocialMedia';
 import { BusinessRegistration } from './pages/BusinessRegistration';
 import { SitePreview } from './pages/SitePreview';
+import { Solutions } from './pages/Solutions';
 import { FloatingActionButton } from './components/ui/FloatingActionButton';
 
 // Scroll to top on route change
@@ -29,7 +30,7 @@ const LayoutWrapper: React.FC<{children: React.ReactNode}> = ({ children }) => {
   const isPreview = location.pathname.startsWith('/preview');
 
   return (
-    <div className="flex flex-col min-h-screen font-sans text-primary bg-background">
+    <div className="flex flex-col min-h-screen font-sans text-on-background bg-background">
       <ScrollToTop />
       {!isPreview && <Header />}
       {children}
@@ -45,6 +46,7 @@ const App: React.FC = () => {
       <LayoutWrapper>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/solutions" element={<Solutions />} />
           <Route path="/pricing" element={<PricingPage />} />
           <Route path="/consultation" element={<Consultation />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />

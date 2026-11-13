@@ -17,13 +17,15 @@ export const Consultation: React.FC = () => {
     const formData = new FormData(e.currentTarget);
 
     try {
-      // Submitting to Google Apps Script
-      // We use no-cors because Apps Script often redirects and doesn't support standard CORS headers easily
-      await fetch(scriptUrl, {
-        method: 'POST',
-        body: formData,
-        mode: 'no-cors'
-      });
+      if (scriptUrl) {
+        // Submitting to Google Apps Script
+        // We use no-cors because Apps Script often redirects and doesn't support standard CORS headers easily
+        await fetch(scriptUrl, {
+          method: 'POST',
+          body: formData,
+          mode: 'no-cors'
+        });
+      }
       
       // We assume success if the fetch doesn't throw
       setSubmitted(true);

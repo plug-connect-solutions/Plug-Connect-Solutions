@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-import { Card, CardContent } from '../ui/Card';
-import { ChevronLeft, ChevronRight, Quote, Star } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
 import { Testimonial } from '../../types';
 
 const testimonials: Testimonial[] = [
@@ -25,6 +24,17 @@ const testimonials: Testimonial[] = [
 export const Testimonials: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // Preload and decode all testimonial images upfront so image and text switch in sync
+  useEffect(() => {
+    testimonials.forEach((item) => {
+      const img = new Image();
+      img.src = item.image;
+      if (typeof img.decode === 'function') {
+        img.decode().catch(() => {});
+      }
+    });
+  }, []);
+
   const next = () => {
     setCurrentIndex((prev) => (prev + 1) % testimonials.length);
   };
@@ -33,53 +43,67 @@ export const Testimonials: React.FC = () => {
     setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
+  const active = testimonials[currentIndex];
+
   return (
-    <section className="py-24 bg-white" id="testimonials">
-      <div className="container">
-        <div className="text-center mb-16">
-          <h2 className="font-heading text-3xl md:text-5xl font-bold text-primary mb-4">Happy Clients</h2>
-          <p className="text-muted-foreground">See what other business owners say about us.</p>
-        </div>
+    <section className="py-14 lg:py-20 px-6 lg:px-16 bg-surface-warm" id="testimonials">
+      <div className="max-w-[1280px] mx-auto">
+        <div className="bg-surface p-8 sm:p-12 lg:p-16 rounded-2xl shadow-sm border border-border-muted relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl pointer-events-none" />
 
-        <div className="max-w-5xl mx-auto relative">
-          <div className="overflow-hidden">
-            <Card className="bg-secondary/20 border-none shadow-none">
-              <CardContent className="p-8 md:p-16 flex flex-col md:flex-row items-center gap-10">
-                <div className="shrink-0 relative">
-                  <div className="absolute inset-0 bg-accent/20 rounded-full blur-xl transform translate-y-2"></div>
-                  <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-xl relative z-10">
-                    <img 
-                      src={testimonials[currentIndex].image} 
-                      alt={testimonials[currentIndex].author} 
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
-                
-                <div className="flex-grow text-center md:text-left">
-                  <div className="flex justify-center md:justify-start gap-1 mb-6 text-yellow-400">
-                    {[1,2,3,4,5].map(i => <Star key={i} size={20} fill="currentColor" />)}
-                  </div>
-                  <Quote size={40} className="text-primary/10 mb-4 mx-auto md:mx-0" fill="currentColor" />
-                  <p className="text-xl md:text-2xl font-medium text-primary leading-relaxed mb-8">
-                    "{testimonials[currentIndex].quote}"
-                  </p>
-                  <div>
-                    <h4 className="font-bold text-xl font-heading">{testimonials[currentIndex].author}</h4>
-                    <p className="text-muted-foreground">{testimonials[currentIndex].role}, {testimonials[currentIndex].company}</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+          <div className="flex flex-col md:flex-row gap-10 lg:gap-12 items-center relative z-10">
+            <div className="w-40 h-40 lg:w-48 lg:h-48 shrink-0 relative rounded-full border-4 border-surface shadow-lg bg-white overflow-hidden">
+              {testimonials.map((item, idx) => (
+                <img
+                  key={item.id}
+                  src={item.image}
+                  alt={item.author}
+                  loading="eager"
+                  decoding="sync"
+                  className={`absolute inset-0 w-full h-full object-cover ${
+                    idx === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
+                  }`}
+                />
+              ))}
+            </div>
 
-          <div className="flex justify-center mt-8 space-x-4">
-            <button onClick={prev} className="p-3 rounded-full bg-white border border-gray-200 hover:border-primary hover:text-primary transition-colors shadow-sm">
-              <ChevronLeft size={24} />
-            </button>
-            <button onClick={next} className="p-3 rounded-full bg-white border border-gray-200 hover:border-primary hover:text-primary transition-colors shadow-sm">
-              <ChevronRight size={24} />
-            </button>
+            <div className="flex-grow text-center md:text-left">
+              <div className="flex justify-center md:justify-start gap-1 mb-6 text-accent">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <Star key={i} size={20} fill="currentColor" />
+                ))}
+              </div>
+
+              <blockquote className="font-heading text-2xl lg:text-[32px] font-semibold leading-[1.3] italic text-primary mb-8 text-balance">
+                "{active.quote}"
+              </blockquote>
+
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+                <cite className="not-italic">
+                  <span className="block font-bold text-lg text-primary">{active.author}</span>
+                  <span className="text-on-surface-variant text-xs font-semibold uppercase tracking-[0.1em]">
+                    {active.role}, {active.company}
+                  </span>
+                </cite>
+
+                <div className="flex items-center gap-3">
+                  <button
+                    onClick={prev}
+                    aria-label="Previous testimonial"
+                    className="w-10 h-10 rounded-full bg-surface-warm border border-border-muted flex items-center justify-center text-primary hover:border-accent hover:text-accent transition-colors"
+                  >
+                    <ChevronLeft size={18} />
+                  </button>
+                  <button
+                    onClick={next}
+                    aria-label="Next testimonial"
+                    className="w-10 h-10 rounded-full bg-surface-warm border border-border-muted flex items-center justify-center text-primary hover:border-accent hover:text-accent transition-colors"
+                  >
+                    <ChevronRight size={18} />
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

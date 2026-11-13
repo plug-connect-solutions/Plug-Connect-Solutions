@@ -1,6 +1,5 @@
-import React from 'react';
-import { Button } from '../ui/Button';
-import { ArrowRight, CheckCircle } from 'lucide-react';
+import React, { useState } from 'react';
+import { ArrowRight, Zap } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
@@ -9,118 +8,111 @@ const trustedCompanies = [
 ];
 
 export const Hero: React.FC = () => {
+  const [heroImgFailed, setHeroImgFailed] = useState(false);
+
   const scrollToServices = () => {
     const element = document.getElementById('services');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
   return (
-    <section className="relative w-full pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-white">
-      {/* Abstract Background Element */}
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-accent/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 z-0 pointer-events-none"></div>
-      
-      <div className="container relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-          
-          <div className="flex-1 text-center lg:text-left">
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center space-x-2 bg-blue-50 border border-blue-100 px-3 py-1 rounded-full mb-8"
-            >
-              <span className="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
-              <span className="text-xs font-semibold text-accent uppercase tracking-wide">Open for New Projects</span>
-            </motion.div>
-
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-primary leading-[1.1] mb-6"
-            >
-              Get Your Business <br />
-              <span className="relative inline-block">
-                <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-primary via-blue-600 to-primary">Online Today</span>
-                <span className="absolute bottom-2 left-0 w-full h-3 bg-accent/20 -z-0"></span>
-              </span>
-            </motion.h1>
-
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-lg md:text-xl text-gray-500 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0"
-            >
-              We help South African businesses grow. From professional websites to systems that help you run your day-to-day work, we make technology simple and affordable.
-            </motion.p>
-
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
-            >
-              <Link to="/consultation">
-                  <Button size="lg" variant="accent" className="w-full sm:w-auto rounded-full text-white font-bold shadow-blue-200">
-                  Get Started <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-              </Link>
-                <Button onClick={scrollToServices} size="lg" variant="outline" className="w-full sm:w-auto rounded-full bg-white hover:text-accent border-gray-200">
-                  View Our Services
-                </Button>
-            </motion.div>
-
-            {/* Trust Signals */}
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.8, duration: 1 }}
-              className="mt-12 pt-8 border-t border-gray-100"
-            >
-              <p className="text-sm font-medium text-gray-400 mb-4 uppercase tracking-wider">Helping businesses in sectors like:</p>
-              <div className="flex flex-wrap justify-center lg:justify-start gap-4 grayscale opacity-70">
-                {trustedCompanies.map((company) => (
-                  <span key={company} className="text-base font-bold text-gray-400 bg-gray-50 px-3 py-1 rounded-md">{company}</span>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex-1 relative w-full max-w-lg lg:max-w-none"
+    <>
+      <header className="relative pt-28 lg:pt-32 pb-12 lg:pb-16 px-6 lg:px-16 overflow-hidden bg-surface">
+        <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          {/* Left Column */}
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55 }}
+            className="lg:col-span-6 z-10"
           >
-            <div className="relative aspect-square md:aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
-              <img 
-                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop" 
-                alt="Business meeting in South Africa" 
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-              
-              <div className="absolute bottom-6 left-6 right-6 p-4 bg-white/90 backdrop-blur-md rounded-xl shadow-lg border border-white/50">
-                <div className="flex items-center gap-4">
-                  <div className="p-3 bg-green-100 text-green-600 rounded-lg">
-                    <CheckCircle size={24} />
-                  </div>
-                  <div>
-                    <p className="font-bold text-gray-900">Online & Open</p>
-                    <p className="text-xs text-gray-500">Reach customers 24/7</p>
-                  </div>
-                </div>
-              </div>
+            <span className="inline-block mb-6 px-4 py-1.5 bg-secondary-fixed text-on-secondary-fixed text-xs font-semibold uppercase tracking-[0.1em] rounded-full">
+              OPEN FOR NEW PROJECTS
+            </span>
+
+            <h1 className="font-heading text-5xl sm:text-6xl lg:text-[72px] font-bold leading-[1.08] tracking-[-0.02em] text-primary mb-5 text-balance">
+              Get Your Business <span className="text-accent">Online</span> Today
+            </h1>
+
+            <p className="text-lg text-on-surface-variant leading-relaxed mb-8 max-w-xl text-balance">
+              We help South African businesses grow. From professional websites to systems that help you run your day-to-day work, we make technology simple and affordable.
+            </p>
+
+            <div className="flex flex-wrap gap-4">
+              <Link to="/consultation">
+                <button className="bg-primary text-white px-8 py-4 text-xs font-semibold uppercase tracking-[0.1em] rounded-md hover:bg-accent transition-all duration-300 inline-flex items-center gap-2 whitespace-nowrap">
+                  Get Started <ArrowRight size={16} />
+                </button>
+              </Link>
+              <button
+                onClick={scrollToServices}
+                className="border border-outline/60 text-primary px-8 py-4 text-xs font-semibold uppercase tracking-[0.1em] rounded-md hover:bg-surface-container transition-all duration-200 whitespace-nowrap"
+              >
+                View Our Services
+              </button>
             </div>
-            
-            {/* Decorative dots */}
-            <div className="absolute -bottom-10 -left-10 w-24 h-24 bg-accent/20 rounded-full blur-xl"></div>
           </motion.div>
 
+          {/* Right Column */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.97 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.15 }}
+            className="lg:col-span-6 relative mt-10 lg:mt-0"
+          >
+            <div className="aspect-[1.5/1] rounded-lg overflow-hidden shadow-2xl shadow-accent/10 border border-border-muted bg-surface-warm p-3 sm:p-4">
+              {heroImgFailed ? (
+                <div className="w-full h-full rounded bg-gradient-to-br from-surface-container to-secondary-fixed/40 flex items-center justify-center p-8 text-center">
+                  <div>
+                    <p className="font-heading text-2xl font-bold text-primary mb-2">Plug Connect Solutions</p>
+                    <p className="text-sm text-on-surface-variant">Web Design, Automation &amp; Digital Growth</p>
+                  </div>
+                </div>
+              ) : (
+                <img
+                  src="/assets/header_img.png"
+                  alt="Business meeting in South Africa"
+                  referrerPolicy="no-referrer"
+                  onError={() => setHeroImgFailed(true)}
+                  className="w-full h-full rounded object-cover"
+                />
+              )}
+            </div>
+
+            {/* Floating Fast Delivery Badge Card */}
+            <div className="sm:absolute sm:-bottom-8 sm:-left-8 mt-4 sm:mt-0 bg-surface p-5 rounded-lg shadow-xl border border-border-muted flex items-center gap-4 max-w-xs">
+              <div className="bg-secondary-container text-on-secondary-container p-3 rounded-lg shrink-0">
+                <Zap size={20} fill="currentColor" />
+              </div>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.1em] text-primary">Fast Delivery</p>
+                <p className="text-xs text-on-surface-variant mt-0.5">Systems live in under 7 days</p>
+              </div>
+            </div>
+          </motion.div>
         </div>
-      </div>
-    </section>
+      </header>
+
+      {/* Trusted By / Sectors Strip */}
+      <section className="bg-surface-container py-8 px-6 lg:px-16 border-y border-border-muted/40">
+        <div className="max-w-[1280px] mx-auto">
+          <p className="text-center text-xs font-semibold uppercase tracking-[0.1em] text-on-surface-variant mb-5">
+            HELPING BUSINESSES IN SECTORS LIKE
+          </p>
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+            {trustedCompanies.map((company) => (
+              <span
+                key={company}
+                className="font-heading text-2xl md:text-[32px] font-semibold text-on-surface/30 hover:text-on-surface/70 transition-colors duration-300 select-none"
+              >
+                {company}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
   );
 };

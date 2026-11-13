@@ -257,7 +257,7 @@ export const PricingPage: React.FC = () => {
         <FAQ />
 
         <section className="text-center pb-8 text-muted-foreground text-sm">
-            <p>Plug Connect Solutions — Connecting Businesses to Smart Digital Solutions.</p>
+            <p>Plug Connect Solutions. Connecting Businesses to Simple Digital Solutions.</p>
         </section>
 
       </div>

@@ -11,7 +11,7 @@
       </script>
     <!-- End Google Tag Manager -->
 
-    <!-- Google Ads Scipt for auto ads-->
+    <!-- Google Ads Script for auto ads-->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9486854660095306"
      crossorigin="anonymous">
     </script>
@@ -50,7 +50,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Meta Pixel Code -->
     <script>
@@ -74,44 +74,63 @@
             center: true,
             padding: "2rem",
             screens: {
-              "2xl": "1400px",
+              "2xl": "1280px",
             },
           },
           extend: {
             fontFamily: {
               sans: ['Inter', 'sans-serif'],
-              heading: ['Outfit', 'sans-serif'],
+              heading: ['Hanken Grotesk', 'sans-serif'],
             },
             colors: {
               border: "hsl(var(--border))",
               input: "hsl(var(--input))",
               ring: "hsl(var(--ring))",
-              background: "#FFFFFF",
-              foreground: "#0A0A0A",
+              background: "#fcf8fa",
+              foreground: "#1b1b1d",
+              surface: "#fcf8fa",
+              "surface-warm": "#F8FAFC",
+              "surface-container": "#f0edef",
+              "surface-container-low": "#f6f3f5",
+              "surface-container-high": "#eae7e9",
+              "surface-container-lowest": "#ffffff",
+              "on-background": "#1b1b1d",
+              "on-surface": "#1b1b1d",
+              "on-surface-variant": "#45464d",
+              "border-muted": "#E2E8F0",
+              outline: "#76777d",
+              "outline-variant": "#c6c6cd",
+              "slate-deep": "#1E293B",
               primary: {
-                DEFAULT: '#0f172a', 
+                DEFAULT: '#000000', 
                 foreground: '#FFFFFF',
               },
+              "primary-container": "#131b2e",
+              "on-primary-container": "#7c839b",
               secondary: {
                 DEFAULT: '#F8FAFC',
-                foreground: '#0f172a',
+                foreground: '#1b1b1d',
               },
+              "secondary-fixed": "#dbe1ff",
+              "on-secondary-fixed": "#00174b",
+              "secondary-container": "#316bf3",
+              "on-secondary-container": "#fefcff",
               accent: {
-                DEFAULT: '#2563EB',
+                DEFAULT: '#0051d5',
                 foreground: '#FFFFFF',
               },
               muted: {
-                DEFAULT: '#F1F5F9',
-                foreground: '#64748B',
+                DEFAULT: '#f0edef',
+                foreground: '#45464d',
               },
               card: {
-                DEFAULT: "#FFFFFF",
-                foreground: "#0A0A0A",
+                DEFAULT: "#ffffff",
+                foreground: "#1b1b1d",
               }
             },
             backgroundImage: {
               'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-              'hero-glow': 'conic-gradient(from 180deg at 50% 50%, #2563EB 0deg, #60A5FA 180deg, #2563EB 360deg)',
+              'hero-glow': 'conic-gradient(from 180deg at 50% 50%, #0051d5 0deg, #316bf3 180deg, #0051d5 360deg)',
             },
             animation: {
               'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
@@ -131,11 +150,11 @@
       :root {
         --border: 214.3 31.8% 91.4%;
         --input: 214.3 31.8% 91.4%;
-        --ring: 221.2 83.2% 53.3%;
+        --ring: 217 100% 42%;
       }
       body {
-        background-color: #FFFFFF;
-        color: #0A0A0A;
+        background-color: #fcf8fa;
+        color: #1b1b1d;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
       }
@@ -153,17 +172,32 @@
       ::-webkit-scrollbar-thumb {
         background: #CBD5E1;
         border-radius: 5px;
-        border: 2px solid #FFFFFF;
+        border: 2px solid #fcf8fa;
       }
       ::-webkit-scrollbar-thumb:hover {
         background: #94A3B8;
       }
 
       .glass {
-        background: rgba(255, 255, 255, 0.9);
+        background: rgba(252, 248, 250, 0.85);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
-        border-bottom: 1px solid rgba(0,0,0,0.05);
+        border-bottom: 1px solid rgba(226, 232, 240, 0.5);
+      }
+
+      .hover-lift {
+        transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+      .hover-lift:hover {
+        transform: translateY(-6px);
+      }
+
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
       }
     </style>
   <script type="importmap">
